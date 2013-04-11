@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A0CD04E1716E3A300DEC2DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0CD04D1716E3A300DEC2DD /* UIKit.framework */; };
+		3A0CD0501716E3A300DEC2DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0CD04F1716E3A300DEC2DD /* Foundation.framework */; };
+		3A0CD0521716E3A300DEC2DD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0CD0511716E3A300DEC2DD /* CoreGraphics.framework */; };
+		3A0CD0581716E3A300DEC2DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A0CD0561716E3A300DEC2DD /* InfoPlist.strings */; };
+		3A0CD05A1716E3A300DEC2DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CD0591716E3A300DEC2DD /* main.m */; };
+		3A0CD05E1716E3A300DEC2DD /* BIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CD05D1716E3A300DEC2DD /* BIAppDelegate.m */; };
+		3A0CD0601716E3A300DEC2DD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A0CD05F1716E3A300DEC2DD /* Default.png */; };
+		3A0CD0621716E3A300DEC2DD /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A0CD0611716E3A300DEC2DD /* Default@2x.png */; };
+		3A0CD0641716E3A300DEC2DD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A0CD0631716E3A300DEC2DD /* Default-568h@2x.png */; };
+		3A0CD06C1716E3A400DEC2DD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0CD06B1716E3A400DEC2DD /* SenTestingKit.framework */; };
+		3A0CD06D1716E3A400DEC2DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0CD04D1716E3A300DEC2DD /* UIKit.framework */; };
+		3A0CD06E1716E3A400DEC2DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0CD04F1716E3A300DEC2DD /* Foundation.framework */; };
+		3A0CD0761716E3A400DEC2DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A0CD0741716E3A400DEC2DD /* InfoPlist.strings */; };
+		3A0CD0791716E3A400DEC2DD /* Bravo_FormsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CD0781716E3A400DEC2DD /* Bravo_FormsTests.m */; };
+		3A0CD0871716E46400DEC2DD /* BIFormViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CD0861716E46400DEC2DD /* BIFormViewCell.m */; };
+		3A0CD08C1716E59800DEC2DD /* BIFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CD08B1716E59800DEC2DD /* BIFormViewController.m */; };
+		3A0CD0901716E5E000DEC2DD /* BIFormTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CD08E1716E5E000DEC2DD /* BIFormTableViewController.m */; };
+		3A0CD0911716E5E000DEC2DD /* BIFormTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A0CD08F1716E5E000DEC2DD /* BIFormTableViewController.xib */; };
+		3A0CD0941716E95F00DEC2DD /* BIFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CD0931716E95F00DEC2DD /* BIFormModel.m */; };
+		3A0CD0961717389800DEC2DD /* libobjc.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0CD0951717389800DEC2DD /* libobjc.A.dylib */; };
+		3A0CD09917173A2400DEC2DD /* UITextField+Identify.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CD09817173A2400DEC2DD /* UITextField+Identify.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A0CD06F1716E3A400DEC2DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A0CD0401716E3A300DEC2DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A0CD0481716E3A300DEC2DD;
+			remoteInfo = "Bravo Forms";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A0CD0491716E3A300DEC2DD /* Bravo Forms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bravo Forms.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A0CD04D1716E3A300DEC2DD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3A0CD04F1716E3A300DEC2DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3A0CD0511716E3A300DEC2DD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3A0CD0551716E3A300DEC2DD /* Bravo Forms-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bravo Forms-Info.plist"; sourceTree = "<group>"; };
+		3A0CD0571716E3A300DEC2DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3A0CD0591716E3A300DEC2DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3A0CD05B1716E3A300DEC2DD /* Bravo Forms-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bravo Forms-Prefix.pch"; sourceTree = "<group>"; };
+		3A0CD05C1716E3A300DEC2DD /* BIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BIAppDelegate.h; sourceTree = "<group>"; };
+		3A0CD05D1716E3A300DEC2DD /* BIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BIAppDelegate.m; sourceTree = "<group>"; };
+		3A0CD05F1716E3A300DEC2DD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3A0CD0611716E3A300DEC2DD /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		3A0CD0631716E3A300DEC2DD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3A0CD06A1716E3A400DEC2DD /* Bravo FormsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bravo FormsTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A0CD06B1716E3A400DEC2DD /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		3A0CD0731716E3A400DEC2DD /* Bravo FormsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Bravo FormsTests-Info.plist"; sourceTree = "<group>"; };
+		3A0CD0751716E3A400DEC2DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3A0CD0771716E3A400DEC2DD /* Bravo_FormsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bravo_FormsTests.h; sourceTree = "<group>"; };
+		3A0CD0781716E3A400DEC2DD /* Bravo_FormsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bravo_FormsTests.m; sourceTree = "<group>"; };
+		3A0CD0851716E46400DEC2DD /* BIFormViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFormViewCell.h; sourceTree = "<group>"; };
+		3A0CD0861716E46400DEC2DD /* BIFormViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFormViewCell.m; sourceTree = "<group>"; };
+		3A0CD08A1716E59800DEC2DD /* BIFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFormViewController.h; sourceTree = "<group>"; };
+		3A0CD08B1716E59800DEC2DD /* BIFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFormViewController.m; sourceTree = "<group>"; };
+		3A0CD08D1716E5E000DEC2DD /* BIFormTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFormTableViewController.h; sourceTree = "<group>"; };
+		3A0CD08E1716E5E000DEC2DD /* BIFormTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFormTableViewController.m; sourceTree = "<group>"; };
+		3A0CD08F1716E5E000DEC2DD /* BIFormTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BIFormTableViewController.xib; sourceTree = "<group>"; };
+		3A0CD0921716E95F00DEC2DD /* BIFormModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIFormModel.h; sourceTree = "<group>"; };
+		3A0CD0931716E95F00DEC2DD /* BIFormModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIFormModel.m; sourceTree = "<group>"; };
+		3A0CD0951717389800DEC2DD /* libobjc.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.A.dylib; path = usr/lib/libobjc.A.dylib; sourceTree = SDKROOT; };
+		3A0CD09717173A2400DEC2DD /* UITextField+Identify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Identify.h"; sourceTree = "<group>"; };
+		3A0CD09817173A2400DEC2DD /* UITextField+Identify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Identify.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A0CD0461716E3A300DEC2DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A0CD0961717389800DEC2DD /* libobjc.A.dylib in Frameworks */,
+				3A0CD04E1716E3A300DEC2DD /* UIKit.framework in Frameworks */,
+				3A0CD0501716E3A300DEC2DD /* Foundation.framework in Frameworks */,
+				3A0CD0521716E3A300DEC2DD /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A0CD0661716E3A400DEC2DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A0CD06C1716E3A400DEC2DD /* SenTestingKit.framework in Frameworks */,
+				3A0CD06D1716E3A400DEC2DD /* UIKit.framework in Frameworks */,
+				3A0CD06E1716E3A400DEC2DD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A0CD03E1716E3A300DEC2DD = {
+			isa = PBXGroup;
+			children = (
+				3A0CD0951717389800DEC2DD /* libobjc.A.dylib */,
+				3A0CD0531716E3A300DEC2DD /* Bravo Forms */,
+				3A0CD0711716E3A400DEC2DD /* Bravo FormsTests */,
+				3A0CD04C1716E3A300DEC2DD /* Frameworks */,
+				3A0CD04A1716E3A300DEC2DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A0CD04A1716E3A300DEC2DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A0CD0491716E3A300DEC2DD /* Bravo Forms.app */,
+				3A0CD06A1716E3A400DEC2DD /* Bravo FormsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A0CD04C1716E3A300DEC2DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A0CD04D1716E3A300DEC2DD /* UIKit.framework */,
+				3A0CD04F1716E3A300DEC2DD /* Foundation.framework */,
+				3A0CD0511716E3A300DEC2DD /* CoreGraphics.framework */,
+				3A0CD06B1716E3A400DEC2DD /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A0CD0531716E3A300DEC2DD /* Bravo Forms */ = {
+			isa = PBXGroup;
+			children = (
+				3A0CD0821716E3E800DEC2DD /* Form */,
+				3A0CD05C1716E3A300DEC2DD /* BIAppDelegate.h */,
+				3A0CD05D1716E3A300DEC2DD /* BIAppDelegate.m */,
+				3A0CD0541716E3A300DEC2DD /* Supporting Files */,
+			);
+			path = "Bravo Forms";
+			sourceTree = "<group>";
+		};
+		3A0CD0541716E3A300DEC2DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A0CD0551716E3A300DEC2DD /* Bravo Forms-Info.plist */,
+				3A0CD0561716E3A300DEC2DD /* InfoPlist.strings */,
+				3A0CD0591716E3A300DEC2DD /* main.m */,
+				3A0CD05B1716E3A300DEC2DD /* Bravo Forms-Prefix.pch */,
+				3A0CD05F1716E3A300DEC2DD /* Default.png */,
+				3A0CD0611716E3A300DEC2DD /* Default@2x.png */,
+				3A0CD0631716E3A300DEC2DD /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A0CD0711716E3A400DEC2DD /* Bravo FormsTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A0CD0771716E3A400DEC2DD /* Bravo_FormsTests.h */,
+				3A0CD0781716E3A400DEC2DD /* Bravo_FormsTests.m */,
+				3A0CD0721716E3A400DEC2DD /* Supporting Files */,
+			);
+			path = "Bravo FormsTests";
+			sourceTree = "<group>";
+		};
+		3A0CD0721716E3A400DEC2DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A0CD0731716E3A400DEC2DD /* Bravo FormsTests-Info.plist */,
+				3A0CD0741716E3A400DEC2DD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A0CD0821716E3E800DEC2DD /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				3A0CD0841716E3FA00DEC2DD /* Controllers */,
+				3A0CD0831716E3F200DEC2DD /* Views */,
+			);
+			name = Form;
+			sourceTree = "<group>";
+		};
+		3A0CD0831716E3F200DEC2DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A0CD08F1716E5E000DEC2DD /* BIFormTableViewController.xib */,
+				3A0CD0851716E46400DEC2DD /* BIFormViewCell.h */,
+				3A0CD0861716E46400DEC2DD /* BIFormViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3A0CD0841716E3FA00DEC2DD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A0CD08D1716E5E000DEC2DD /* BIFormTableViewController.h */,
+				3A0CD08E1716E5E000DEC2DD /* BIFormTableViewController.m */,
+				3A0CD08A1716E59800DEC2DD /* BIFormViewController.h */,
+				3A0CD08B1716E59800DEC2DD /* BIFormViewController.m */,
+				3A0CD0921716E95F00DEC2DD /* BIFormModel.h */,
+				3A0CD0931716E95F00DEC2DD /* BIFormModel.m */,
+				3A0CD09717173A2400DEC2DD /* UITextField+Identify.h */,
+				3A0CD09817173A2400DEC2DD /* UITextField+Identify.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A0CD0481716E3A300DEC2DD /* Bravo Forms */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A0CD07C1716E3A400DEC2DD /* Build configuration list for PBXNativeTarget "Bravo Forms" */;
+			buildPhases = (
+				3A0CD0451716E3A300DEC2DD /* Sources */,
+				3A0CD0461716E3A300DEC2DD /* Frameworks */,
+				3A0CD0471716E3A300DEC2DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bravo Forms";
+			productName = "Bravo Forms";
+			productReference = 3A0CD0491716E3A300DEC2DD /* Bravo Forms.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A0CD0691716E3A400DEC2DD /* Bravo FormsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A0CD07F1716E3A400DEC2DD /* Build configuration list for PBXNativeTarget "Bravo FormsTests" */;
+			buildPhases = (
+				3A0CD0651716E3A400DEC2DD /* Sources */,
+				3A0CD0661716E3A400DEC2DD /* Frameworks */,
+				3A0CD0671716E3A400DEC2DD /* Resources */,
+				3A0CD0681716E3A400DEC2DD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A0CD0701716E3A400DEC2DD /* PBXTargetDependency */,
+			);
+			name = "Bravo FormsTests";
+			productName = "Bravo FormsTests";
+			productReference = 3A0CD06A1716E3A400DEC2DD /* Bravo FormsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A0CD0401716E3A300DEC2DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BI;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Bravo Inovação";
+			};
+			buildConfigurationList = 3A0CD0431716E3A300DEC2DD /* Build configuration list for PBXProject "Bravo Forms" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3A0CD03E1716E3A300DEC2DD;
+			productRefGroup = 3A0CD04A1716E3A300DEC2DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A0CD0481716E3A300DEC2DD /* Bravo Forms */,
+				3A0CD0691716E3A400DEC2DD /* Bravo FormsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A0CD0471716E3A300DEC2DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A0CD0581716E3A300DEC2DD /* InfoPlist.strings in Resources */,
+				3A0CD0601716E3A300DEC2DD /* Default.png in Resources */,
+				3A0CD0621716E3A300DEC2DD /* Default@2x.png in Resources */,
+				3A0CD0641716E3A300DEC2DD /* Default-568h@2x.png in Resources */,
+				3A0CD0911716E5E000DEC2DD /* BIFormTableViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A0CD0671716E3A400DEC2DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A0CD0761716E3A400DEC2DD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A0CD0681716E3A400DEC2DD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A0CD0451716E3A300DEC2DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A0CD05A1716E3A300DEC2DD /* main.m in Sources */,
+				3A0CD05E1716E3A300DEC2DD /* BIAppDelegate.m in Sources */,
+				3A0CD0871716E46400DEC2DD /* BIFormViewCell.m in Sources */,
+				3A0CD08C1716E59800DEC2DD /* BIFormViewController.m in Sources */,
+				3A0CD0901716E5E000DEC2DD /* BIFormTableViewController.m in Sources */,
+				3A0CD0941716E95F00DEC2DD /* BIFormModel.m in Sources */,
+				3A0CD09917173A2400DEC2DD /* UITextField+Identify.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A0CD0651716E3A400DEC2DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A0CD0791716E3A400DEC2DD /* Bravo_FormsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A0CD0701716E3A400DEC2DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A0CD0481716E3A300DEC2DD /* Bravo Forms */;
+			targetProxy = 3A0CD06F1716E3A400DEC2DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A0CD0561716E3A300DEC2DD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A0CD0571716E3A300DEC2DD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3A0CD0741716E3A400DEC2DD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A0CD0751716E3A400DEC2DD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A0CD07A1716E3A400DEC2DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3A0CD07B1716E3A400DEC2DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A0CD07D1716E3A400DEC2DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bravo Forms/Bravo Forms-Prefix.pch";
+				INFOPLIST_FILE = "Bravo Forms/Bravo Forms-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3A0CD07E1716E3A400DEC2DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bravo Forms/Bravo Forms-Prefix.pch";
+				INFOPLIST_FILE = "Bravo Forms/Bravo Forms-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3A0CD0801716E3A400DEC2DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Bravo Forms.app/Bravo Forms";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bravo Forms/Bravo Forms-Prefix.pch";
+				INFOPLIST_FILE = "Bravo FormsTests/Bravo FormsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		3A0CD0811716E3A400DEC2DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Bravo Forms.app/Bravo Forms";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bravo Forms/Bravo Forms-Prefix.pch";
+				INFOPLIST_FILE = "Bravo FormsTests/Bravo FormsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A0CD0431716E3A300DEC2DD /* Build configuration list for PBXProject "Bravo Forms" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A0CD07A1716E3A400DEC2DD /* Debug */,
+				3A0CD07B1716E3A400DEC2DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A0CD07C1716E3A400DEC2DD /* Build configuration list for PBXNativeTarget "Bravo Forms" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A0CD07D1716E3A400DEC2DD /* Debug */,
+				3A0CD07E1716E3A400DEC2DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3A0CD07F1716E3A400DEC2DD /* Build configuration list for PBXNativeTarget "Bravo FormsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A0CD0801716E3A400DEC2DD /* Debug */,
+				3A0CD0811716E3A400DEC2DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A0CD0401716E3A300DEC2DD /* Project object */;
+}
