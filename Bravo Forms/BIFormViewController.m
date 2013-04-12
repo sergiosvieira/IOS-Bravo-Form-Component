@@ -48,6 +48,12 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Public Methods
+- (void)setInfo:(NSDictionary *)info
+{
+    [self.tableController.modelController setInfo:info];
+}
+
 #pragma mark - Private Methods
 - (void)initialize
 {

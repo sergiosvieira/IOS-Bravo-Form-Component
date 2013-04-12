@@ -16,5 +16,6 @@
 
 #pragma mark - Public Methods
 - (id)initWithInfo:(NSDictionary *)info;
+- (void)setInfo:(NSDictionary *)info;
 
 @end
