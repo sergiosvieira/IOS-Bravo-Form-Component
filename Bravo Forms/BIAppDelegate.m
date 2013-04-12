@@ -22,7 +22,7 @@
         NSNumber *email = [NSNumber numberWithInteger:EMAIL];
         NSNumber *date = [NSNumber numberWithInteger:DATE];
         NSNumber *option = [NSNumber numberWithInteger:OPTION];
-        NSNumber *height = [NSNumber numberWithInteger:NUMBER];
+        NSNumber *weight = [NSNumber numberWithInteger:NUMBER];
         
         NSDictionary *info = @{
             // Section 01
@@ -31,7 +31,7 @@
                 @[NSLocalizedString(@"Name", nil), @"", string],
                 @[NSLocalizedString(@"Email", nil), @"", email],
                 @[NSLocalizedString(@"Hometown", nil), @"", string],
-                @[NSLocalizedString(@"Height", nil), @"", height],
+                @[NSLocalizedString(@"Weight", nil), @"", weight],
                 @[NSLocalizedString(@"Birthday", nil), @"", date],
                 @[
                     NSLocalizedString(@"Gender", nil),

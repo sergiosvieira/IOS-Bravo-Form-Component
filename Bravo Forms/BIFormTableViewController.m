@@ -110,8 +110,21 @@
         case DATE:
             cell.tfField.inputView = self.datePicker;
         break;
+        
         case OPTION:
             cell.tfField.inputView = self.picker;
+        break;
+        
+        case NUMBER:
+            cell.tfField.keyboardType = UIKeyboardTypeNumberPad;
+        break;
+        
+        case EMAIL:
+            cell.tfField.keyboardType = UIKeyboardTypeEmailAddress;
+        break;
+        
+        case STRING:
+            cell.tfField.keyboardType = UIKeyboardTypeDefault;
         break;
     }
 }
@@ -178,17 +191,6 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     selectedTextField = textField;
-    
-    switch ([textField.type integerValue])
-    {
-        case DATE:
-        
-        break;
-        
-        case OPTION:
-        
-        break;
-    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
