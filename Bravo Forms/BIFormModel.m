@@ -137,6 +137,37 @@
     return rows[row];
 }
 
+- (NSNumber *)getTypeAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSAssert([info_.allValues[indexPath.section] isKindOfClass:[NSArray class]], @"Invalid dictionary format. A NSArray is"
+        " required!");
+    
+    NSArray *row = [self getRowAtIndexPath:indexPath];
+    
+    NSAssert([row[2] isKindOfClass:[NSNumber class]], @"Invalid dictionary format. A NSNumber is required!");
+    
+    return row[2];
+}
+
+- (NSArray *)getOptionValuesAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSAssert([info_.allValues[indexPath.section] isKindOfClass:[NSArray class]], @"Invalid dictionary format. A NSArray is"
+        " required!");
+
+    NSArray *row = [self getRowAtIndexPath:indexPath];
+    NSNumber *type = row[2];
+    NSArray *options = row[3];
+    NSMutableArray *result = [NSMutableArray arrayWithArray:options];
+
+    NSAssert([type isKindOfClass:[NSNumber class]], @"Invalid dictionary format. A NSNumber is required!");
+    NSAssert([type intValue] == OPTION, @"Invalid selected field. It's must be a OPTION field!");
+    NSAssert([options isKindOfClass:[NSArray class]], @"Invalid dictionary format. A NSArray is required!");
+    
+    [result insertObject:NSLocalizedString(@"Choose one", nil) atIndex:0];
+    
+    return result;
+}
+
 - (void)setInfo:(NSDictionary *)info
 {
     info_ = info;

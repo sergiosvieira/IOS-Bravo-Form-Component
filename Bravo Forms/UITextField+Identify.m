@@ -12,26 +12,27 @@
 
 @implementation UITextField (Identify)
 
-static char ContextPrivateKey;
+static char ContextPrivateKeyIndexPath;
+static char ContextPrivateKeyType;
 
 - (void)setType:(NSNumber *)type
 {
-    objc_setAssociatedObject(self, &ContextPrivateKey, type, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, &ContextPrivateKeyType, type, OBJC_ASSOCIATION_RETAIN);
 }
 
 - (NSNumber *)type
 {
-    return objc_getAssociatedObject(self, &ContextPrivateKey);
+    return objc_getAssociatedObject(self, &ContextPrivateKeyType);
 }
 
 - (void)setIndexPath:(NSIndexPath *)indexPath
 {
-    objc_setAssociatedObject(self, &ContextPrivateKey, indexPath, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, &ContextPrivateKeyIndexPath, indexPath, OBJC_ASSOCIATION_RETAIN);
 }
 
 - (NSIndexPath *)indexPath
 {
-    return objc_getAssociatedObject(self, &ContextPrivateKey);
+    return objc_getAssociatedObject(self, &ContextPrivateKeyIndexPath);
 }
 
 @end

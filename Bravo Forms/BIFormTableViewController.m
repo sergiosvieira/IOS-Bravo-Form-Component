@@ -21,10 +21,33 @@
     return _modelController;
 }
 
+- (UIPickerView *)picker
+{
+    if (!_picker)
+    {
+        _picker = [[UIPickerView alloc] init];
+    }
+   
+    return _picker;
+}
+
+- (UIDatePicker *)datePicker
+{
+    if (!_datePicker)
+    {
+        _datePicker = [[UIDatePicker alloc] init];
+        _datePicker.datePickerMode = UIDatePickerModeDate;
+        [_datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];       
+    }
+   
+    return _datePicker;
+}
+
 #pragma mark - Init
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initialize];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,11 +89,31 @@
 }
 
 #pragma mark - Private Methods
+- (void)initialize
+{
+    /** UIPickerView **/
+    self.picker.delegate = self;
+}
+
 - (void)configureCell:(BIFormViewCell *)cell withModel:(BIFormModel *)model withIndexPath:(NSIndexPath *)indexPath
 {
+    /** cell label **/
     [cell.lbCaption setText:self.modelController.allFields[indexPath.section][indexPath.row]];
+    
+    /** cell field **/
     [cell.tfField setText:self.modelController.allValues[indexPath.section][indexPath.row]];
     cell.tfField.indexPath = indexPath;
+    cell.tfField.type = [self.modelController getTypeAtIndexPath:indexPath];
+    
+    switch ([cell.tfField.type intValue])
+    {
+        case DATE:
+            cell.tfField.inputView = self.datePicker;
+        break;
+        case OPTION:
+            cell.tfField.inputView = self.picker;
+        break;
+    }
 }
 
 - (NSIndexPath *) nextIndexPath:(NSIndexPath *)indexPath
@@ -93,6 +136,61 @@
 }
 
 #pragma mark - UITextFieldDelegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    BOOL result = NO;
+    BOOL containsReadOnly;
+    BOOL containsNumeric;
+    NSNumber *date = [NSNumber numberWithInt:DATE];
+    NSNumber *option = [NSNumber numberWithInt:OPTION];
+    NSNumber *number = [NSNumber numberWithInt:NUMBER];
+    NSArray *readOnlyFields = @[
+        date,
+        option
+    ];
+    NSArray *numericFields = @[
+        number
+    ];
+    
+    containsReadOnly = [readOnlyFields containsObject:textField.type];
+    containsNumeric = [numericFields containsObject:textField.type];
+    
+    if (!containsReadOnly && containsNumeric)
+    {
+        // accepting only numbers
+        NSCharacterSet *onlyNumeric = [NSCharacterSet decimalDigitCharacterSet];
+        NSCharacterSet *stringSet = [NSCharacterSet characterSetWithCharactersInString:string];
+        
+        if ([onlyNumeric isSupersetOfSet:stringSet])
+        {
+            result = YES;
+        }
+    }
+    else
+    {
+        // is read only field
+        result = !containsReadOnly;
+    }
+
+    return result;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    selectedTextField = textField;
+    
+    switch ([textField.type integerValue])
+    {
+        case DATE:
+        
+        break;
+        
+        case OPTION:
+        
+        break;
+    }
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     int section = textField.indexPath.section;
@@ -120,6 +218,46 @@
     }
     
     return YES;
+}
+
+#pragma mark - UIPickerViewDelegate
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component
+{
+    NSArray *options = [self.modelController getOptionValuesAtIndexPath:selectedTextField.indexPath];
+    
+    return [options count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSArray *options = [self.modelController getOptionValuesAtIndexPath:selectedTextField.indexPath];
+
+    return options[row];
+}
+
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if (row != 0)
+    {
+        NSArray *options = [self.modelController getOptionValuesAtIndexPath:selectedTextField.indexPath];
+        
+        [selectedTextField setText:options[row]];
+    }
+}
+
+#pragma mark - Selectors
+- (void)datePickerValueChanged:(UIDatePicker *)datePicker
+{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"dd/MM/yyyy"];//@"dMMMyyyy h:mm:ss a"];
+    NSString *date = [dateFormat stringFromDate:datePicker.date ];
+   
+    [selectedTextField setText:date];
 }
 
 @end

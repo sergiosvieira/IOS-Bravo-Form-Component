@@ -12,10 +12,18 @@
 
 @interface BIFormTableViewController : UITableViewController
 <
-    UITextFieldDelegate
+    UITextFieldDelegate,
+    UIPickerViewDelegate
 >
+{
+@private
+    NSArray *currentOptions;
+    UITextField *selectedTextField;
+}
 
 #pragma mark - Lazy Properties
 @property (nonatomic, strong) BIFormModel *modelController;
+@property (nonatomic, strong) UIDatePicker *datePicker;
+@property (nonatomic, strong) UIPickerView *picker;
 
 @end

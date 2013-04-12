@@ -26,6 +26,8 @@ typedef enum {
 - (id)initWithInfo:(NSDictionary *)info;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
 - (NSArray *)getRowAtIndexPath:(NSIndexPath *)indexPath;
+- (NSNumber *)getTypeAtIndexPath:(NSIndexPath *)indexPath;
+- (NSArray *)getOptionValuesAtIndexPath:(NSIndexPath *)indexPath;
 - (void)setInfo:(NSDictionary *)info;
 
 #pragma mark - Lazy Properties
