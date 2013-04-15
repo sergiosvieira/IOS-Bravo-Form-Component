@@ -10,6 +10,7 @@
 
 typedef enum {
     STRING,
+    PASSWORD,
     EMAIL,
     NUMBER,
     DATE,

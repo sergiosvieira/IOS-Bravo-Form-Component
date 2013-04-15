@@ -126,6 +126,11 @@
         case STRING:
             cell.tfField.keyboardType = UIKeyboardTypeDefault;
         break;
+        
+        case PASSWORD:
+            cell.tfField.keyboardType = UIKeyboardTypeDefault;
+            cell.tfField.secureTextEntry = YES;
+        break;
     }
 }
 
