@@ -10,6 +10,15 @@
 #import "BIFormTableViewController.h"
 
 @interface BIFormViewController : UIViewController
+<
+    UITableViewDelegate
+>
+{
+@private
+    NSMutableDictionary *buttons;
+    NSMutableArray *views;
+    int footerHeight;
+}
 
 #pragma mark - Lazy Properties
 @property (nonatomic, strong) BIFormTableViewController *tableController;
@@ -17,5 +26,6 @@
 #pragma mark - Public Methods
 - (id)initWithInfo:(NSDictionary *)info;
 - (void)setInfo:(NSDictionary *)info;
+- (void)addButton:(UIButton *)button inSection:(int)section;
 
 @end
