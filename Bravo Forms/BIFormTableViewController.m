@@ -85,12 +85,15 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return self.modelController.sections[section];
+    return self.isVisibleSectionTitle ? self.modelController.sections[section] : @"";
 }
 
 #pragma mark - Private Methods
 - (void)initialize
 {
+    /** initialize **/
+    self.isVisibleSectionTitle = NO;
+    
     /** UIPickerView **/
     self.picker.delegate = self;
 }
