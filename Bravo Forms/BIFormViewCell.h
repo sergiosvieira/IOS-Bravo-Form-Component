@@ -14,4 +14,8 @@
 @property (strong, nonatomic) UILabel *lbCaption;
 @property (strong, nonatomic) UITextField *tfField;
 
+#pragma mark - Public Methods
+- (void)defaultLabelPosition;
+- (void)centerLabelPosition;
+
 @end

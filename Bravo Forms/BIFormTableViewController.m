@@ -97,6 +97,10 @@
 
 - (void)configureCell:(BIFormViewCell *)cell withModel:(BIFormModel *)model withIndexPath:(NSIndexPath *)indexPath
 {
+    /** common cell attibutes **/
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell setAccessoryType:UITableViewCellAccessoryNone];
+    
     /** cell label **/
     [cell.lbCaption setText:self.modelController.allFields[indexPath.section][indexPath.row]];
     
@@ -104,6 +108,8 @@
     [cell.tfField setText:self.modelController.allValues[indexPath.section][indexPath.row]];
     cell.tfField.indexPath = indexPath;
     cell.tfField.type = [self.modelController getTypeAtIndexPath:indexPath];
+    cell.tfField.hidden = NO;
+    [cell defaultLabelPosition];
     
     switch ([cell.tfField.type intValue])
     {
@@ -130,6 +136,13 @@
         case PASSWORD:
             cell.tfField.keyboardType = UIKeyboardTypeDefault;
             cell.tfField.secureTextEntry = YES;
+        break;
+        
+        case BUTTON:
+            cell.tfField.hidden = YES;
+            [cell centerLabelPosition];
+            [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         break;
     }
 }

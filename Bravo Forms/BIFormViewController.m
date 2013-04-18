@@ -133,4 +133,26 @@
     return views[section];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *row = [self.tableController.modelController getRowAtIndexPath:indexPath];
+    NSNumber *type = [self.tableController.modelController getTypeAtIndexPath:indexPath];
+    
+    if ([type intValue] == BUTTON)
+    {
+        // 0 = Title, 1 = default value, 2 = type, 3 = target, 4 = action (nsstring)
+        NSObject *obj = row[3];
+        
+        SEL selector = NSSelectorFromString(row[4]);
+        
+        if ([obj respondsToSelector:selector])
+        {
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [obj performSelector:selector withObject:obj];
+            #pragma clang diagnostic pop
+        }
+    }
+}
+
 @end

@@ -10,19 +10,24 @@
 
 #define kFONT_SIZE 13.f
 
+const CGRect CGRectLabel = {
+    {
+        20.0f,
+        0.0f
+    },
+    {
+        80.0f,
+        43.0f
+    }
+};
+
 @implementation BIFormViewCell
 
 - (UILabel *)lbCaption
 {
     if (!_lbCaption)
     {
-        CGRect frame = CGRectMake
-        (
-            20.f,//self.bbiActions.width,
-            0.f,
-            80.f,
-            43.f
-        );
+        CGRect frame = CGRectLabel;
         
         _lbCaption = [[UILabel alloc] initWithFrame:frame];
         
@@ -75,6 +80,22 @@
     }
     return self;
 }
+
+#pragma mark - Public Methods
+- (void)defaultLabelPosition
+{
+    self.lbCaption.textAlignment = UITextAlignmentLeft;
+    self.lbCaption.frame = CGRectLabel;
+}
+
+- (void)centerLabelPosition
+{
+    CGRect frame = self.lbCaption.superview.frame;
+    
+    self.lbCaption.textAlignment = UITextAlignmentCenter;
+    self.lbCaption.frame = frame;
+}
+
 
 #pragma mark - Private Methods
 - (void)initialize

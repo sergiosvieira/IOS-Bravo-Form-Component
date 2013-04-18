@@ -12,6 +12,7 @@
 
 @interface BIFormTableViewController : UITableViewController
 <
+    UITableViewDelegate,
     UITextFieldDelegate,
     UIPickerViewDelegate
 >

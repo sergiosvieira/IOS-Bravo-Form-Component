@@ -14,7 +14,8 @@ typedef enum {
     EMAIL,
     NUMBER,
     DATE,
-    OPTION
+    OPTION,
+    BUTTON
 } BIFormType;
 
 @interface BIFormModel : NSObject
