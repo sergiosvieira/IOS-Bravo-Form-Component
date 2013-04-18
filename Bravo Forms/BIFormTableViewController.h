@@ -26,5 +26,6 @@
 @property (nonatomic, strong) BIFormModel *modelController;
 @property (nonatomic, strong) UIDatePicker *datePicker;
 @property (nonatomic, strong) UIPickerView *picker;
+@property (assign, nonatomic) BOOL isVisibleSectionTitle;
 
 @end

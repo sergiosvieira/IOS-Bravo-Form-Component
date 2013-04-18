@@ -22,10 +22,12 @@
 
 #pragma mark - Lazy Properties
 @property (nonatomic, strong) BIFormTableViewController *tableController;
+@property (assign, nonatomic) BOOL isVisibleSectionTitle;
 
 #pragma mark - Public Methods
 - (id)initWithInfo:(NSDictionary *)info;
 - (void)setInfo:(NSDictionary *)info;
 - (void)addButton:(UIButton *)button inSection:(int)section;
+
 
 @end

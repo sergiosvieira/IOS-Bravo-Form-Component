@@ -107,10 +107,21 @@
     [view addSubview:button];
 }
 
+- (void)setIsVisibleSectionTitle:(BOOL)isVisibleSectionTitle
+{
+    self.tableController.isVisibleSectionTitle = isVisibleSectionTitle;
+}
+
+- (BOOL)isVisibleSectionTitle
+{
+    return self.tableController.isVisibleSectionTitle;
+}
+
 #pragma mark - Private Methods
 - (void)initialize
 {
     /** initialize **/
+    self.isVisibleSectionTitle = NO;
     footerHeight = 0;
     buttons = [[NSMutableDictionary alloc] init];
     views = [[NSMutableArray alloc] init];
@@ -130,7 +141,7 @@
 
  - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    return views[section];
+    return [views count] > 0 ? views[section] : nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
