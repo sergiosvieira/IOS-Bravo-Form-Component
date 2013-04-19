@@ -18,7 +18,6 @@
 >
 {
 @private
-    NSArray *currentOptions;
     UITextField *selectedTextField;
 }
 
