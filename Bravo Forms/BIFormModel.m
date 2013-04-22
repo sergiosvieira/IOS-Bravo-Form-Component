@@ -175,4 +175,38 @@
     _allValues = nil;
 }
 
+- (void)setValuesWithDictionary:(NSDictionary *)info section:(int)section
+{
+    NSArray *infoKeys = info.allKeys;
+    NSArray *infoValues = info.allValues;
+    
+    for (int i = 0; i < [infoKeys count]; i++)
+    {
+        NSNumber *index =  [self getIndexWithKey:infoKeys[i] section:section];
+        
+        if (index)
+        {
+            self.allValues[section][[index intValue]] = infoValues[i];
+        }
+    }
+}
+
+#pragma mark - Private Methods
+- (NSNumber *)getIndexWithKey:(NSString *)key section:(int)section
+{
+    NSNumber *result = nil;
+    
+    for (int i = 0; i < [self.allFields[section] count]; i++)
+    {
+        NSString *current = self.allFields[section][i];
+        
+        if ([[current lowercaseString] isEqualToString:[key lowercaseString]])
+        {
+            return [NSNumber numberWithInt:i];
+        }
+    }
+    
+    return result;
+}
+
 @end

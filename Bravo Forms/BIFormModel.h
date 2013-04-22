@@ -31,6 +31,7 @@ typedef enum {
 - (NSNumber *)getTypeAtIndexPath:(NSIndexPath *)indexPath;
 - (NSArray *)getOptionValuesAtIndexPath:(NSIndexPath *)indexPath;
 - (void)setInfo:(NSDictionary *)info;
+- (void)setValuesWithDictionary:(NSDictionary *)info section:(int)section;
 
 #pragma mark - Lazy Properties
 @property (nonatomic, strong) NSArray *sections;
