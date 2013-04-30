@@ -15,7 +15,9 @@ typedef enum {
     NUMBER,
     DATE,
     OPTION,
-    BUTTON
+    BUTTON,
+    CUSTOM,
+    STRING_WITH_BUTTON
 } BIFormType;
 
 @interface BIFormModel : NSObject
@@ -31,7 +33,11 @@ typedef enum {
 - (NSNumber *)getTypeAtIndexPath:(NSIndexPath *)indexPath;
 - (NSArray *)getOptionValuesAtIndexPath:(NSIndexPath *)indexPath;
 - (void)setInfo:(NSDictionary *)info;
+- (NSDictionary *)getInfo;
 - (void)setValuesWithDictionary:(NSDictionary *)info section:(int)section;
+- (void)setValueWithIndexPath:(NSIndexPath *)indexPath value:(NSString *)value;
+- (void)setValueByKey:(NSString *)key value:(NSString *)value;
+- (void)clearAllValues;
 
 #pragma mark - Lazy Properties
 @property (nonatomic, strong) NSArray *sections;

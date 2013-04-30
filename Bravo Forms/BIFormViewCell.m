@@ -48,7 +48,7 @@ const CGRect CGRectLabel = {
         (
             123.f,//self.bbiActions.width,
             7.f,
-            190.f,
+            150.f,
             30.f
         );
         

@@ -19,6 +19,7 @@
 {
 @private
     UITextField *selectedTextField;
+    BOOL isEditable;
 }
 
 #pragma mark - Lazy Properties
@@ -26,5 +27,8 @@
 @property (nonatomic, strong) UIDatePicker *datePicker;
 @property (nonatomic, strong) UIPickerView *picker;
 @property (assign, nonatomic) BOOL isVisibleSectionTitle;
+
+#pragma mark - Public Methods
+- (void)setEditable:(BOOL)editable;
 
 @end

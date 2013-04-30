@@ -69,12 +69,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"BIFormViewCell";
+    static NSString *CellCustomIdentifier = @"CellCustomIdentifier";
     
-    BIFormViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    BOOL isCustom = NO;
+    
+    NSNumber *type = [self.modelController getTypeAtIndexPath:indexPath];
+    
+    if ([type intValue] == CUSTOM)
+    {
+        isCustom = YES;
+    }
+    
+    BIFormViewCell *cell = [tableView dequeueReusableCellWithIdentifier:isCustom ? CellIdentifier : CellCustomIdentifier];
     
     if (cell == nil)
     {
-        cell = [[BIFormViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[BIFormViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:isCustom ? CellIdentifier :
+            CellCustomIdentifier];
         cell.tfField.delegate = self;
     }
     
@@ -88,11 +99,18 @@
     return self.isVisibleSectionTitle ? self.modelController.sections[section] : @"";
 }
 
+#pragma mark - Public Methods
+- (void)setEditable:(BOOL)editable
+{
+    isEditable = editable;
+}
+
 #pragma mark - Private Methods
 - (void)initialize
 {
     /** initialize **/
     self.isVisibleSectionTitle = NO;
+    isEditable = YES;
     
     /** UIPickerView **/
     self.picker.delegate = self;
@@ -106,6 +124,7 @@
     
     /** cell label **/
     [cell.lbCaption setText:self.modelController.allFields[indexPath.section][indexPath.row]];
+    cell.lbCaption.hidden = NO;
     
     /** cell field **/
     [cell.tfField setText:self.modelController.allValues[indexPath.section][indexPath.row]];
@@ -125,32 +144,65 @@
         break;
         
         case NUMBER:
+            cell.tfField.inputView = nil;
             cell.tfField.keyboardType = UIKeyboardTypeNumberPad;
         break;
         
         case EMAIL:
+            cell.tfField.inputView = nil;
             cell.tfField.keyboardType = UIKeyboardTypeEmailAddress;
         break;
         
         case STRING:
+            cell.tfField.inputView = nil;
             cell.tfField.keyboardType = UIKeyboardTypeDefault;
         break;
         
         case PASSWORD:
+            cell.tfField.inputView = nil;
             cell.tfField.keyboardType = UIKeyboardTypeDefault;
             cell.tfField.secureTextEntry = YES;
         break;
         
         case BUTTON:
+            cell.tfField.inputView = nil;
             cell.tfField.hidden = YES;
-            [cell centerLabelPosition];
+            //[cell centerLabelPosition];
             [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
             cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        break;
+        
+        case CUSTOM:
+        {
+            cell.tfField.inputView = nil;
+            cell.tfField.keyboardType = UIKeyboardTypeDefault;
+            cell.tfField.hidden = YES;
+            cell.lbCaption.hidden = YES;
+
+            NSArray *row = [self.modelController getRowAtIndexPath:indexPath];
+
+            CGRect frame = cell.contentView.frame;
+            UIView *view = row[3];
+
+            frame.origin.x += 15;
+            frame.origin.y += 5;
+            frame.size.width -= 15;
+            frame.size.height -= 5;
+            view.frame = frame;
+            
+            [cell addSubview:view];
+        }
+        break;
+        
+        case STRING_WITH_BUTTON:
+            cell.tfField.inputView = nil;
+            cell.tfField.keyboardType = UIKeyboardTypeDefault;
+            [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
         break;
     }
 }
 
-- (NSIndexPath *) nextIndexPath:(NSIndexPath *)indexPath
+- (NSIndexPath *)nextIndexPath:(NSIndexPath *)indexPath
 {
     NSIndexPath *nextIndexPath;
     
@@ -240,8 +292,8 @@
         
         if (!isValid && [textField.text length] > 0)
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"Invalid email.",
-                nil) delegate:nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning", nil) message:
+                NSLocalizedString(@"Invalid email.", nil) delegate:nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
             
             [alert show];
         }
@@ -272,6 +324,11 @@
     }
     
     return YES;
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return isEditable;
 }
 
 #pragma mark - UIPickerViewDelegate

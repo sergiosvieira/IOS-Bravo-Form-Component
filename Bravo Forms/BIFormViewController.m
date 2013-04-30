@@ -9,6 +9,8 @@
 #import "BIFormViewController.h"
 #import "BIFormModel.h"
 
+#define CELL_HEIGHT  44.f
+
 @interface BIFormViewController (Hidden)
 
 - (void)initialize;
@@ -44,6 +46,11 @@
 {
     [super viewDidLoad];
     [self initialize];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -117,6 +124,11 @@
     return self.tableController.isVisibleSectionTitle;
 }
 
+- (void)setEditable:(BOOL)editable
+{
+    [self.tableController setEditable:editable];
+}
+
 #pragma mark - Private Methods
 - (void)initialize
 {
@@ -166,4 +178,67 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *row = [self.tableController.modelController getRowAtIndexPath:indexPath];
+    NSNumber *type = [self.tableController.modelController getTypeAtIndexPath:indexPath];
+    
+    if ([type intValue] == STRING_WITH_BUTTON)
+    {
+        // 0 = Title, 1 = default value, 2 = type, 3 = target, 4 = action (nsstring)
+        NSObject *obj = row[3];
+        
+        SEL selector = NSSelectorFromString(row[4]);
+        
+        if ([obj respondsToSelector:selector])
+        {
+            BIFormViewCell *cell = (BIFormViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+            NSString *text = cell.tfField.text;
+            
+            cell.tfField.text = @"";
+            
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [obj performSelector:selector withObject:text withObject:indexPath];
+            #pragma clang diagnostic pop
+        }
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    CGFloat height = CELL_HEIGHT;
+    NSArray *array = [self.tableController.modelController getRowAtIndexPath:indexPath];
+    NSNumber *type = array[2];
+    
+    if ([type intValue] == CUSTOM)
+    {
+        UIView *view = (UIView *)array[3];
+        
+        SEL selector = NSSelectorFromString(array[4]);
+        
+        if ([view respondsToSelector:selector])
+        {
+            #pragma clang diagnostic push
+            #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [view performSelector:selector];
+            #pragma clang diagnostic pop
+        }
+        
+        height = view.frame.size.height + 10.f;
+        
+        if (height < CELL_HEIGHT)
+        {
+            height = CELL_HEIGHT;
+        }
+    }
+    
+//    if ([self.options[indexPath.section][indexPath.row][1] isEqualToString:@"taglist"])
+//    {
+//        [self.tagList display];
+//        height = self.tagList.fittedSize.height + 10;
+//    }
+    
+    return height;
+}
 @end

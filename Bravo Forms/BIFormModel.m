@@ -157,6 +157,12 @@
     NSArray *row = [self getRowAtIndexPath:indexPath];
     NSNumber *type = row[2];
     NSArray *options = row[3];
+    
+    if (![options isKindOfClass:[NSArray class]])
+    {
+        return nil;
+    }
+    
     NSMutableArray *result = [NSMutableArray arrayWithArray:options];
 
     NSAssert([type isKindOfClass:[NSNumber class]], @"Invalid dictionary format. A NSNumber is required!");
@@ -175,6 +181,24 @@
     _allValues = nil;
 }
 
+- (NSDictionary *)getInfo
+{
+    NSMutableDictionary *result = [[NSMutableDictionary alloc] init];
+    
+    for (int i = 0; i < [self.allFields count]; i++)
+    {
+        NSArray *keys = self.allFields[i];
+        
+        for (int j = 0; j < [keys count]; j++)
+        {
+            NSString *value = self.allValues[i][j];
+            result[[keys[j] lowercaseString]] = value;
+        }
+    }
+    
+    return result;
+}
+
 - (void)setValuesWithDictionary:(NSDictionary *)info section:(int)section
 {
     NSArray *infoKeys = info.allKeys;
@@ -189,6 +213,32 @@
             self.allValues[section][[index intValue]] = infoValues[i];
         }
     }
+}
+
+- (void)setValueWithIndexPath:(NSIndexPath *)indexPath value:(NSString *)value
+{
+    self.allValues[indexPath.section][indexPath.row] = value;
+}
+
+- (void)setValueByKey:(NSString *)key value:(NSString *)value
+{
+    for (int i = 0; i < [self.allFields count]; i++)
+    {
+        for (int j = 0; j < [self.allFields[i] count]; j++)
+        {
+            NSString *field = self.allFields[i][j];
+            
+            if ([[field lowercaseString] isEqualToString:key])
+            {
+                self.allValues[i][j] = value;
+            }
+        }
+    }
+}
+
+- (void)clearAllValues
+{
+    _allValues = nil;
 }
 
 #pragma mark - Private Methods
