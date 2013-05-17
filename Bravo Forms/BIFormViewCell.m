@@ -96,6 +96,13 @@ const CGRect CGRectLabel = {
     self.lbCaption.frame = frame;
 }
 
+- (void)buttonLabelPosition
+{
+    CGRect frame = self.lbCaption.frame;
+    
+    frame.size.width += 100.f;
+    self.lbCaption.frame = frame;
+}
 
 #pragma mark - Private Methods
 - (void)initialize

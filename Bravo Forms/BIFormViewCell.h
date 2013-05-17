@@ -17,5 +17,6 @@
 #pragma mark - Public Methods
 - (void)defaultLabelPosition;
 - (void)centerLabelPosition;
+- (void)buttonLabelPosition;
 
 @end

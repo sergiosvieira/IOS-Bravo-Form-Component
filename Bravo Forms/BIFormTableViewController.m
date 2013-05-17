@@ -167,7 +167,7 @@
         case BUTTON:
             cell.tfField.inputView = nil;
             cell.tfField.hidden = YES;
-            //[cell centerLabelPosition];
+            [cell buttonLabelPosition];
             [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
             cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         break;
