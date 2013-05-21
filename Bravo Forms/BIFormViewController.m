@@ -148,7 +148,11 @@
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return footerHeight + BRAVO_FORM_BUTTON_PADDING;
+    #ifdef BRAVO_FORM_BUTTON_PADDING
+        return footerHeight + BRAVO_FORM_BUTTON_PADDING;
+    #else
+        return footerHeight;
+    #endif
 }
 
  - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
