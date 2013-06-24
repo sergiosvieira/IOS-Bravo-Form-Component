@@ -28,6 +28,8 @@
 		3A0CD0941716E95F00DEC2DD /* BIFormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CD0931716E95F00DEC2DD /* BIFormModel.m */; };
 		3A0CD0961717389800DEC2DD /* libobjc.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0CD0951717389800DEC2DD /* libobjc.A.dylib */; };
 		3A0CD09917173A2400DEC2DD /* UITextField+Identify.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0CD09817173A2400DEC2DD /* UITextField+Identify.m */; };
+		3A30A9C7175FBEBF00C1CD98 /* mario.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A30A9C6175FBEBF00C1CD98 /* mario.png */; };
+		3A30A9C9175FC9CA00C1CD98 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A30A9C8175FC9C900C1CD98 /* icon.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		3A0CD0951717389800DEC2DD /* libobjc.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.A.dylib; path = usr/lib/libobjc.A.dylib; sourceTree = SDKROOT; };
 		3A0CD09717173A2400DEC2DD /* UITextField+Identify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Identify.h"; sourceTree = "<group>"; };
 		3A0CD09817173A2400DEC2DD /* UITextField+Identify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Identify.m"; sourceTree = "<group>"; };
+		3A30A9C6175FBEBF00C1CD98 /* mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mario.png; path = "Bravo Forms/mario.png"; sourceTree = SOURCE_ROOT; };
+		3A30A9C8175FC9C900C1CD98 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon.jpg; path = "Bravo Forms/icon.jpg"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,8 @@
 		3A0CD0721716E3A400DEC2DD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3A30A9C8175FC9C900C1CD98 /* icon.jpg */,
+				3A30A9C6175FBEBF00C1CD98 /* mario.png */,
 				3A0CD0731716E3A400DEC2DD /* Bravo FormsTests-Info.plist */,
 				3A0CD0741716E3A400DEC2DD /* InfoPlist.strings */,
 			);
@@ -293,6 +299,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A0CD0761716E3A400DEC2DD /* InfoPlist.strings in Resources */,
+				3A30A9C7175FBEBF00C1CD98 /* mario.png in Resources */,
+				3A30A9C9175FC9CA00C1CD98 /* icon.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +500,7 @@
 				3A0CD07E1716E3A400DEC2DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A0CD07F1716E3A400DEC2DD /* Build configuration list for PBXNativeTarget "Bravo FormsTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +509,7 @@
 				3A0CD0811716E3A400DEC2DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

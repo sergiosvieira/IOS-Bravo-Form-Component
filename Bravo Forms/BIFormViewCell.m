@@ -40,6 +40,17 @@ const CGRect CGRectLabel = {
     return _lbCaption;
 }
 
+- (UIImageView *)imageField
+{
+    if (!_imageField)
+    {
+        _imageField = [[UIImageView alloc] initWithFrame:CGRectMake(128.f, 5.f, 30.f, 30.f)];
+        [self addSubview:_imageField];
+    }
+    
+    return _imageField;
+}
+
 - (UITextField *)tfField
 {
     if (!_tfField)

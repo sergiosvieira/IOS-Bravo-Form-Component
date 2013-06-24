@@ -114,6 +114,56 @@
     [view addSubview:button];
 }
 
+- (void)addLabel:(UILabel *)label inSection:(int)section
+{
+    CGFloat padding = 0.f;
+    
+    #ifdef BRAVO_FORM_BUTTON_PADDING
+        padding = BRAVO_FORM_BUTTON_PADDING;
+    #endif
+    
+    CGRect frame;
+    UIView *view;
+    NSNumber *objSection = [NSNumber numberWithInt:section];
+    int sections =  [self.tableController.modelController.sections count];
+    
+    NSAssert(section < sections, @"Error: section index out of bounds!");
+    
+    NSMutableArray *array = buttons[objSection];
+        
+    if (!array)
+    {
+        CGRect scrFrame = [[UIScreen mainScreen] applicationFrame];
+        buttons[objSection] = [[NSMutableArray alloc] init];
+        view = [[UIView alloc] initWithFrame:scrFrame];
+        [views addObject:view];
+    }
+    
+    UIButton *lastButton = (UIButton *)[array lastObject];
+    
+    if (!lastButton)
+    {
+        frame = label.frame;
+        frame.origin.y = 0.f + padding;
+        label.frame = frame;
+    }
+    else
+    {
+        frame = lastButton.frame;
+        frame.origin.y += frame.size.height + padding;
+        label.frame = frame;
+    }
+    
+    array = buttons[objSection];
+    [array addObject:label];
+    footerHeight += label.frame.size.height + padding;
+    view = views[section];
+    frame = view.frame;
+    frame.size.height = footerHeight;
+    view.frame = frame;
+    [view addSubview:label];
+}
+
 - (void)setIsVisibleSectionTitle:(BOOL)isVisibleSectionTitle
 {
     self.tableController.isVisibleSectionTitle = isVisibleSectionTitle;

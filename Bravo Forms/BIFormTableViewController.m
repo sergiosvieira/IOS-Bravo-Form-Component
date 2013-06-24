@@ -199,6 +199,16 @@
             cell.tfField.keyboardType = UIKeyboardTypeDefault;
             [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
         break;
+        
+        case IMAGE:
+            cell.lbCaption.hidden = YES;
+            
+//            UIImage *image = [UIImage imageNamed:[self.modelController getImageNameAtIndexPath:indexPath]];
+            UIImage *image = [UIImage imageNamed:@"icon.jpg"];
+            [cell.imageField setImage:image];
+            cell.imageField.hidden = NO;
+            [cell addSubview:cell.imageField];
+        break;
     }
 }
 

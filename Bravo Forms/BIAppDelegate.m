@@ -18,12 +18,13 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-        NSNumber *string = [NSNumber numberWithInteger:STRING];
-        NSNumber *email = [NSNumber numberWithInteger:EMAIL];
-        NSNumber *date = [NSNumber numberWithInteger:DATE];
-        NSNumber *option = [NSNumber numberWithInteger:OPTION];
-        NSNumber *weight = [NSNumber numberWithInteger:NUMBER];
-        
+        NSNumber *string = @(STRING);
+        NSNumber *email = @(EMAIL);
+        NSNumber *date = @(DATE);
+        NSNumber *option = @(OPTION);
+        NSNumber *weight = @(NUMBER);
+        NSNumber *image = @(IMAGE);
+    
         NSDictionary *info = @{
             // Section 01
             NSLocalizedString(@"Personal Information", nil): @[
@@ -33,6 +34,7 @@
                 @[NSLocalizedString(@"Hometown", nil), @"", string],
                 @[NSLocalizedString(@"Weight", nil), @"", weight],
                 @[NSLocalizedString(@"Birthday", nil), @"", date],
+                @[NSLocalizedString(@"MarioIcon", nil), @"teste", image, @"mario.png"],
                 @[
                     NSLocalizedString(@"Gender", nil),
                     @"",

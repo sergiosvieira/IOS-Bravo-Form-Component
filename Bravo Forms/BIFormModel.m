@@ -149,6 +149,18 @@
     return row[2];
 }
 
+- (NSString *)getImageNameAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSAssert([info_.allValues[indexPath.section] isKindOfClass:[NSArray class]], @"Invalid dictionary format. A NSArray is"
+        " required!");
+    
+    NSArray *row = [self getRowAtIndexPath:indexPath];
+    
+    NSAssert([row[3] isKindOfClass:[NSString class]], @"Invalid dictionary format. A NSNumber is required!");
+    
+    return row[3];
+}
+
 - (NSArray *)getOptionValuesAtIndexPath:(NSIndexPath *)indexPath
 {
     NSAssert([info_.allValues[indexPath.section] isKindOfClass:[NSArray class]], @"Invalid dictionary format. A NSArray is"
@@ -239,6 +251,11 @@
 - (void)clearAllValues
 {
     _allValues = nil;
+}
+
+- (NSDictionary *)info
+{
+    return info_;
 }
 
 #pragma mark - Private Methods

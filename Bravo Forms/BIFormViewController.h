@@ -28,6 +28,7 @@
 - (id)initWithInfo:(NSDictionary *)info;
 - (void)setInfo:(NSDictionary *)info;
 - (void)addButton:(UIButton *)button inSection:(int)section;
+- (void)addLabel:(UILabel *)label inSection:(int)section;
 - (void)setEditable:(BOOL)editable;
 
 @end
